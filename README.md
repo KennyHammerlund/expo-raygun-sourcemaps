@@ -6,6 +6,10 @@ once installed and published sourcemaps can be found https://app.raygun.com/sett
 
 This will overwrite sourcemaps with the same version number in raygun. If you have 1.1.1 and publish 1.1.1 again with new code the sourcemaps may be off. Make sure you bump your patch versions. Also any sourcemap with a version that does not match `/\d+\.\d+\.\d+/` will be written as `-dev` to support CI/CD pipleline dev versioning
 
+
+## IN PROGRESS WORK v.1.0.4
+Working out some kins with the guys at raygun. So this is not fully operational at the moment. use at your own risk.
+
 ### Usage
 
 Install
@@ -48,3 +52,6 @@ rg4js('onBeforeSend', (payload) => normalize(modifiedPayload)(manifest)(OS)
 
 ```
 
+### TODOS:
+- cleanup on .tmp files
+- add s3 upload

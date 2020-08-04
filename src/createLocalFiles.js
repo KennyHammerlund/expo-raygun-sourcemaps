@@ -9,15 +9,7 @@ module.exports.create = async (options) => {
     console.log("No options passes from expo. . . Aborting");
     return;
   }
-  const {
-    config,
-    iosBundle,
-    iosSourceMap,
-    androidBundle,
-    androidSourceMap,
-    projectRoot,
-    exp,
-  } = options || {};
+  const { config, projectRoot, exp } = options || {};
 
   const { ios, android } = getUrl({ exp, config });
 
@@ -26,6 +18,12 @@ module.exports.create = async (options) => {
   rimraf.sync(tmpdir);
   //create new temp folder
   mkdirp.sync(tmpdir);
+
+  // somehow things got switched. . .
+  const iosBundle = options.androidBundle;
+  const iosSourceMap = options.androidSourceMap;
+  const androidBundle = options.iosBundle;
+  const androidSourceMap = options.iosSourceMap;
 
   const iosPath = tmpdir + `/${ios.source}`;
   const iosMapPath = tmpdir + `/${ios.map}`;

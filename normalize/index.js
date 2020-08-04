@@ -2,7 +2,6 @@ const { cloneDeep } = require("lodash");
 
 const normalize = (payload) => (manifest) => (OS) => {
   const modifiedPayload = cloneDeep(payload);
-  console.log("extra", manifest.extra);
   const normalizedFiles = getUrl({ exp: manifest });
   const url = normalizedFiles[OS].sourceUrl;
 
