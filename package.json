@@ -10,7 +10,7 @@
   "dependencies": {
     "aws-sdk": "^2.716.0",
     "lodash": "^4.17.19",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^3.1.1",
     "node-libcurl": "^2.2.0",
     "np": "^6.3.2",
     "read-last-lines": "^1.7.2"
